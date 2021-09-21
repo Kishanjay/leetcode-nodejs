@@ -18,3 +18,15 @@
 // What is the spacetime complexity
 // can it be done in O(logn)?
 //  => yes
+//
+//
+//
+// Given this structure
+// 0: time: 4, deps: [1,2]
+// 1: time: 9, deps: [4]
+// 2: time: 6, deps: [4]
+// 3: time: 12, deps: []
+// 4: time: 1, deps: []
+// and that the deps contain the task that need to be finished before I can start
+// how long does it take to resolve task 0?
+// => 4 + 9 + 12 + 6
