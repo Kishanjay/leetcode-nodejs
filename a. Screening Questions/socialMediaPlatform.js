@@ -30,3 +30,12 @@
 // and that the deps contain the task that need to be finished before I can start
 // how long does it take to resolve task 0?
 // => 4 + 9 + 12 + 6
+
+
+// Get the counter clockwise outline of a tree
+
+// Randomly print the name of a city. 
+// The probability this city will be printed is equal to its propotion of the set
+// e.g. [{name: 'Ams', pop: 18000000}, {name: 'Ber', pop: 34000000}]
+// probability AMS = 18/52
+// probability BER = 34/52
