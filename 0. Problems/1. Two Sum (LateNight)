@@ -1,0 +1,23 @@
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    const goal = {};
+    for (let i = 0; i < nums.length; i++) {
+        goal[target-nums[i]] = i;
+    }
+
+    for (let i = 0; i < nums.length; i++) {
+        const num = nums[i]
+        if (num in goal){
+            if (goal[num] !== i){ 
+                return [goal[num], i]
+            }
+            
+        }
+    }
+
+    throw Error("invalid input")
+};
