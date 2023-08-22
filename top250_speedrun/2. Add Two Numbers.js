@@ -12,7 +12,8 @@
  */
 var addTwoNumbers = function (l1, l2) {
   let carry = 0;
-  let head, cur;
+  const head = new ListNode(0, undefined);
+  let cur = head;
 
   while (l1 || l2) {
     let result = carry;
@@ -32,11 +33,7 @@ var addTwoNumbers = function (l1, l2) {
     }
 
     const next = new ListNode(result, undefined);
-    if (!head) {
-      head = next;
-    } else {
-      cur.next = next;
-    }
+    cur.next = next;
     cur = next;
   }
 
@@ -44,5 +41,5 @@ var addTwoNumbers = function (l1, l2) {
     cur.next = new ListNode(carry, undefined);
   }
 
-  return head;
+  return head.next;
 };
