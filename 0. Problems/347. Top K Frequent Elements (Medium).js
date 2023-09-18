@@ -32,3 +32,42 @@ var topKFrequent = function (nums, k) {
 
   return result;
 };
+
+/**
+ * FOLLOWUP - w/ BucketSort.
+ */
+var topKFrequent = function (nums, k) {
+  const counter = {};
+
+  for (const num of nums) {
+    if (num in counter) {
+      counter[num]++;
+    } else {
+      counter[num] = 1;
+    }
+  }
+
+  const counterArr = [];
+
+  for (const [num, count] of Object.entries(counter)) {
+    if (count in counterArr) {
+      counterArr[count].push(num);
+    } else {
+      counterArr[count] = [num];
+    }
+  }
+
+  const result = [];
+
+  for (let i = nums.length; i > 0; i--) {
+    if (k <= 0) {
+      break;
+    }
+    if (counterArr[i] !== undefined) {
+      k -= counterArr[i].length;
+      result.push(...counterArr[i]);
+    }
+  }
+
+  return result;
+};
