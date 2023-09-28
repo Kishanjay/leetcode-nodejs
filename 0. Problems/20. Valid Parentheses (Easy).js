@@ -24,3 +24,27 @@ var isValid = function (s) {
 
   return hist.length === 0;
 };
+
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+
+const pairs = {
+  "}": "{",
+  ")": "(",
+  "]": "["
+}
+var isValid = function(s) {
+  let stack = [];
+  for (let i = 0; i < s.length; i++) {
+    if (pairs[s[i]]) {
+      if (stack.pop() !== pairs[s[i]]) {
+        return false;
+      }
+    } else {
+      stack.push(s[i]);
+    }
+  }
+  return stack.length === 0;
+};
